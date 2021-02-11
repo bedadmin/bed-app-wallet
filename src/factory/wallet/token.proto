@@ -1,0 +1,34 @@
+
+syntax = "proto2";
+
+package PbTokenMsg;
+
+message TokenMsg {
+	required uint32 opid = 1;
+}
+
+message CreateTokenMsg {
+	required uint32 opid = 1;
+	required string tokenaddress = 2;
+	required string name = 3;
+	required string symbol = 4;
+	required uint64 totalamount = 5;
+	required uint32 digits = 6;
+}
+
+message TransferTokenMsg {
+	required uint32 opid = 1;
+	required string dstAddress = 2;
+	required uint32 tokenid = 3;
+	required uint64 amount = 4;
+	required string comment = 5;
+}
+
+message LockTokenMsg {
+	required uint32 opid = 1;
+	required string dstAddress = 2;
+	required uint32 tokenid = 3;
+	required uint64 amount = 4;
+	required string comment = 5;
+	required uint64 expiryheight = 6;
+}
